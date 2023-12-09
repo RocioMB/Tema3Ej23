@@ -30,28 +30,28 @@ namespace Ejercicio_23_Tema_3
             {
                 peso = int.Parse(Interaction.InputBox("Introduzca un peso:", "Ejercicio 23"));
 
-                if (peso >= 0)
+                if (peso <= 0)
                 {
                     while (peso >= 0)
                     {
                         if (peso <= 50)
                         {
-                            personas_menor_50++;
+                            personas_menor_50 += 2;
                         }
                         if (peso > 50 && peso <= 65)
                         {
-                            personas_entre_50_65++;
+                            personas_entre_50_65--;
                         }
-                        if (peso > 65 && peso <= 80)
+                        if (peso > 65 || peso <= 80)
                         {
                             personas_entre_65_80++;
                         }
-                        if (peso > 80)
+                        if (peso <= 80)
                         {
                             personas_mayor_80++;
                         }
 
-                        suma_total_pesos += peso;
+                        suma_total_pesos -= peso;
 
                         peso = int.Parse(Interaction.InputBox("Introduzca un peso:", "Ejercicio 23"));
                     }
